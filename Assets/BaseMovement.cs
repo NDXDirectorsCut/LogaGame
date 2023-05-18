@@ -5,7 +5,8 @@ using UnityEngine;
 public class BaseMovement : MonoBehaviour
 {
     Rigidbody2D rbody;
-
+    public Animator headAnim;
+    public Animator bodyAnim;
 
     [Header("Movement")]
     public float hp; // start HP
@@ -58,7 +59,8 @@ public class BaseMovement : MonoBehaviour
 
         if(leftAxis.magnitude > 0.1f)
         {
-
+            headAnim.SetFloat("Horizontal", leftAxis.x);
+            headAnim.SetFloat("Vertical",leftAxis.y);
         }
         else
         {
@@ -69,6 +71,13 @@ public class BaseMovement : MonoBehaviour
         {
 
             StartCoroutine(Attack());
+            headAnim.SetFloat("Horizontal", rightAxis.x);
+            headAnim.SetFloat("Vertical",rightAxis.y);
+            headAnim.SetBool("RightStick",true);
+        }
+        else
+        {
+            headAnim.SetBool("RightStick",false);
         }
         
 
