@@ -53,14 +53,24 @@ public class BaseMovement : MonoBehaviour
         leftAxis = Vector3.ClampMagnitude(new Vector3(lHor,lVer,0),1);
         rightAxis = new Vector3(rHor,rVer,0);
         
-        rbody.velocity = new Vector2(leftAxis.x,leftAxis.y) * acc;
+        rbody.velocity += new Vector2(leftAxis.x,leftAxis.y) * acc;
         rbody.velocity = Vector3.ClampMagnitude(rbody.velocity,speed);
+
+        if(leftAxis.magnitude > 0.1f)
+        {
+
+        }
+        else
+        {
+            rbody.velocity = Vector3.Lerp(rbody.velocity,Vector3.zero,0.2f);
+        }
 
         if(rightAxis.magnitude > 0.1f)
         {
 
             StartCoroutine(Attack());
         }
+        
 
 
         if(drawDebug == true)
