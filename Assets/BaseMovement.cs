@@ -20,6 +20,8 @@ public class BaseMovement : MonoBehaviour
     public float range; // start Range
     public float projectileSpeed;
     public float projectileSize;
+    public float randomization;
+    public LayerMask layers;
     public Sprite tearSprite;
     [Space(10)]
 
@@ -51,7 +53,7 @@ public class BaseMovement : MonoBehaviour
         leftAxis = Vector3.ClampMagnitude(new Vector3(lHor,lVer,0),1);
         rightAxis = new Vector3(rHor,rVer,0);
         
-        rbody.velocity = new Vector2(leftAxis.x,leftAxis.y) * acc * 100 * Time.deltaTime;
+        rbody.velocity = new Vector2(leftAxis.x,leftAxis.y) * acc;
         rbody.velocity = Vector3.ClampMagnitude(rbody.velocity,speed);
 
         if(rightAxis.magnitude > 0.1f)
@@ -73,6 +75,7 @@ public class BaseMovement : MonoBehaviour
         if(canFire == true)
         {
             GameObject tear = new GameObject("tear", typeof(SpriteRenderer), typeof(Rigidbody2D),typeof(CircleCollider2D));
+            tear.layer = LayerMask.NameToLayer("Player");
             tear.GetComponent<SpriteRenderer>().sprite = tearSprite;
             tear.GetComponent<SpriteRenderer>().sortingOrder = 10;
             tear.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
@@ -80,7 +83,7 @@ public class BaseMovement : MonoBehaviour
             tear.GetComponent<Rigidbody2D>().velocity = rightAxis.normalized * projectileSpeed;
             tear.GetComponent<CircleCollider2D>().radius = projectileSize;
             tear.GetComponent<CircleCollider2D>().isTrigger = true;
-            tear.transform.position = transform.position;
+            tear.transform.position = transform.position + new Vector3(Random.Range(-randomization,randomization),Random.Range(-randomization,randomization),0);
             StartCoroutine(TearLife(tear,0.1f,rightAxis.normalized));
             Destroy(tear,range);
             //Debug.Log("Fire Tear");
@@ -94,7 +97,6 @@ public class BaseMovement : MonoBehaviour
     IEnumerator TearLife(GameObject obj,float acc,Vector2 dir)
     {
         Rigidbody2D objBody = obj.GetComponent<Rigidbody2D>();
-        CircleCollider2D objCol = obj.GetComponent<CircleCollider2D>();
         float i,k=0;
         if(objBody != null)
         {
@@ -102,14 +104,14 @@ public class BaseMovement : MonoBehaviour
             {
                 objBody.velocity = Vector2.Lerp(dir * projectileSpeed,dir* projectileSpeed * 0.15f,i/range);
                 obj.transform.localScale = Vector3.Lerp(Vector3.one,Vector3.one * 0.85f,i/range);
-
+                if(Physics2D.OverlapCircle(obj.transform.position,projectileSize,layers) != null)
+                {
+                    objBody.velocity = Vector2.zero;
+                    Destroy(obj);
+                }
                 yield return new WaitForSeconds(0.1f);
                 k+=0.1f;
             }
-        }
-        else
-        {
-            StopCoroutine(TearLife(obj,acc,dir));
         }
     }
 }
