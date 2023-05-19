@@ -23,7 +23,7 @@ public class RoomGeneratorScript : MonoBehaviour
     {
         map = new GameObject("Map");
         StartCoroutine(GenerateLayout());
-        for(n=2;n<roomNumber;n++)
+        for(n=1;n<roomNumber;n++)
         {
             map.transform.GetChild(n).gameObject.SetActive(false);
         }

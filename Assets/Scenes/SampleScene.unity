@@ -2542,7 +2542,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.18746002, g: 0.509434, b: 0.18022428, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -4825,7 +4825,7 @@ MonoBehaviour:
   - {fileID: 1141752862689498673, guid: aec7c1b471d762e2a96a17d275f2de02, type: 3}
   - {fileID: 1141752862689498673, guid: 28b475aca42adc783b2d5e92a7994eb3, type: 3}
   - {fileID: 1141752862689498673, guid: 2b750af745d703627bf9636036b8467c, type: 3}
-  - {fileID: 1141752862689498673, guid: aec7c1b471d762e2a96a17d275f2de02, type: 3}
+  - {fileID: 1141752862689498673, guid: a0707d081bbbad49685ab0a5f3dc5038, type: 3}
   - {fileID: 1141752862689498673, guid: aec7c1b471d762e2a96a17d275f2de02, type: 3}
   - {fileID: 1141752862689498673, guid: aec7c1b471d762e2a96a17d275f2de02, type: 3}
   - {fileID: 1141752862689498673, guid: aec7c1b471d762e2a96a17d275f2de02, type: 3}
