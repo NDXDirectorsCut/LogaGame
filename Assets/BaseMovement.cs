@@ -7,6 +7,7 @@ public class BaseMovement : MonoBehaviour
     Rigidbody2D rbody;
     public Animator headAnim;
     public Animator bodyAnim;
+    public int roomNumber = 0;
 
     [Header("Movement")]
     public float hp; // start HP
