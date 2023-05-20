@@ -55,7 +55,7 @@ public class RoomGeneratorScript : MonoBehaviour
 
             if(i>1 && i <=firstDark)
             {
-                int id = Random.Range(0,15);
+                int id = Random.Range(0,20);
                 room = Instantiate(forestRooms[id],position,Quaternion.identity);
                 room.transform.SetParent(map.transform);
                 //Debug.Log("Generated Room with ID " + id);
@@ -64,7 +64,7 @@ public class RoomGeneratorScript : MonoBehaviour
 
             if(i>firstDark && i <=firstSwamp)
             {
-                int id = Random.Range(0,15);
+                int id = Random.Range(0,20);
                 room = Instantiate(darkForestRooms[id],position,Quaternion.identity);
                 room.transform.SetParent(map.transform);
                 //Debug.Log("Generated Room with ID " + id);
@@ -73,7 +73,7 @@ public class RoomGeneratorScript : MonoBehaviour
 
             if(i>firstSwamp && i <roomNumber)
             {
-                int id = Random.Range(0,15);
+                int id = Random.Range(0,20);
                 room = Instantiate(swampRooms[id],position,Quaternion.identity);
                 room.transform.SetParent(map.transform);
                 //Debug.Log("Generated Room with ID " + id);
