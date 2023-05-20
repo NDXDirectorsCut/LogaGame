@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 16726881874382121}
   - component: {fileID: 16726881874382120}
   - component: {fileID: 6163023384067378036}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Apa_CR_swamp
   m_TagString: Untagged
   m_Icon: {fileID: 0}

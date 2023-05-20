@@ -64,7 +64,7 @@ MonoBehaviour:
   hp: 20
   weakTo: Player Projectile
   rbody: {fileID: 6509345387499589892}
-  knockback: 2
+  knockback: 7
   DeathParticle: {fileID: 7723508849633284206, guid: bca7f5954fa9d50959f9cab507b20bca, type: 3}
 --- !u!1 &6509345387499590143
 GameObject:

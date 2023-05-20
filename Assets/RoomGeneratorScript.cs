@@ -21,7 +21,7 @@ public class RoomGeneratorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //seed = Random.Range(0,44000);
+        seed = Random.Range(0,44000);
         map = new GameObject("Map");
         StartCoroutine(GenerateLayout());
         for(n=1;n<roomNumber;n++)
