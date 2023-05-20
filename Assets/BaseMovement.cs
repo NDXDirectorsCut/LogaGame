@@ -19,6 +19,7 @@ public class BaseMovement : MonoBehaviour
     [Header("Attacking")]
     public bool canFire;
     public float fireDelay; //start firing rate
+    public float damage;
     public float range; // start Range
     public float projectileSpeed;
     public float projectileSize;
@@ -62,10 +63,12 @@ public class BaseMovement : MonoBehaviour
         {
             headAnim.SetFloat("Horizontal", leftAxis.x);
             headAnim.SetFloat("Vertical",leftAxis.y);
+            bodyAnim.SetBool("Walk",true);
         }
         else
         {
             rbody.velocity = Vector3.Lerp(rbody.velocity,Vector3.zero,0.2f);
+            bodyAnim.SetBool("Walk",false);
         }
 
         if(rightAxis.magnitude > 0.1f)
@@ -95,7 +98,8 @@ public class BaseMovement : MonoBehaviour
         if(canFire == true)
         {
             GameObject tear = new GameObject("tear", typeof(SpriteRenderer), typeof(Rigidbody2D),typeof(CircleCollider2D));
-            tear.layer = LayerMask.NameToLayer("Player");
+            tear.layer = LayerMask.NameToLayer("Projectiles");
+            tear.tag = "Player Projectile";
             tear.GetComponent<SpriteRenderer>().sprite = tearSprite;
             tear.GetComponent<SpriteRenderer>().sortingOrder = 10;
             tear.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
