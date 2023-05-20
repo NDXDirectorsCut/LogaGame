@@ -9,14 +9,14 @@ public class DoorScript : MonoBehaviour
     public Sprite closedDoorSprite;
     GameObject closedDoor;
     GameObject closedTree;
-    public EnemyHandler enemyScript;
+    public GameObject enemyList;
     bool isEnabled = true;
     float fadeTime = .25f;
     // Start is called before the first frame update
     void Awake()
     {
         // Debug.Log(transform.root.name);
-        enemyScript = transform.parent.parent.Find("Enemies").GetComponent<EnemyHandler>();
+        enemyList = transform.parent.parent.Find("Enemies").gameObject;//.GetComponent<EnemyHandler>();
         closedDoor = new GameObject("closedDoor",typeof(SpriteRenderer),typeof(BoxCollider2D));
         closedDoor.GetComponent<SpriteRenderer>().sprite = transform.parent.Find("grass").GetComponent<SpriteRenderer>().sprite;
         closedDoor.GetComponent<SpriteRenderer>().sortingOrder = 20;
@@ -36,7 +36,7 @@ public class DoorScript : MonoBehaviour
 
     void Update()
     {
-        if(enemyScript.enemyCount != 0)
+        if(enemyList.transform.childCount != 0)
         {
             isEnabled = false;
             closedDoor.SetActive(true);
