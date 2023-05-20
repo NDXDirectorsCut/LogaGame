@@ -5,6 +5,7 @@ using UnityEngine;
 public class BaseMovement : MonoBehaviour
 {
     Rigidbody2D rbody;
+    AudioSource sound;
     public Animator headAnim;
     public Animator bodyAnim;
     public int roomNumber = 0;
@@ -22,6 +23,7 @@ public class BaseMovement : MonoBehaviour
     public float damage;
     public float range; // start Range
     public float projectileSpeed;
+    public AudioClip fireSound;
     public float projectileSize;
     public float randomization;
     public LayerMask layers;
@@ -43,6 +45,7 @@ public class BaseMovement : MonoBehaviour
     void Start()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
+        sound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -98,18 +101,24 @@ public class BaseMovement : MonoBehaviour
         if(canFire == true)
         {
             GameObject tear = new GameObject("tear", typeof(SpriteRenderer), typeof(Rigidbody2D),typeof(CircleCollider2D));
+            GameObject tearSound = new GameObject("tearSound",typeof(AudioSource));
+
             tear.layer = LayerMask.NameToLayer("Projectiles");
             tear.tag = "Player Projectile";
             tear.GetComponent<SpriteRenderer>().sprite = tearSprite;
             tear.GetComponent<SpriteRenderer>().sortingOrder = 10;
             tear.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
             tear.GetComponent<Rigidbody2D>().gravityScale = 0;
+            tear.GetComponent<Rigidbody2D>().mass = damage;
             tear.GetComponent<Rigidbody2D>().velocity = rightAxis.normalized * projectileSpeed;
             tear.GetComponent<CircleCollider2D>().radius = projectileSize;
             tear.GetComponent<CircleCollider2D>().isTrigger = true;
+            tearSound.GetComponent<AudioSource>().clip = fireSound;
+            tearSound.GetComponent<AudioSource>().Play();
             tear.transform.position = transform.position + new Vector3(Random.Range(-randomization,randomization),Random.Range(-randomization,randomization),0);
             StartCoroutine(TearLife(tear,0.1f,rightAxis.normalized));
             Destroy(tear,range);
+            Destroy(tearSound,range);
             //Debug.Log("Fire Tear");
             canFire = false;
 

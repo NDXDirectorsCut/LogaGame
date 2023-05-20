@@ -21,6 +21,7 @@ public class RoomGeneratorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //seed = Random.Range(0,44000);
         map = new GameObject("Map");
         StartCoroutine(GenerateLayout());
         for(n=1;n<roomNumber;n++)
@@ -40,6 +41,7 @@ public class RoomGeneratorScript : MonoBehaviour
         Random.InitState(seed);
         //GameObject map;// = new GameObject("Map");
         int i,j; int prevDir = 0;
+        int k;
         GameObject room = startRoom;
         int dir = 0;
         position = Vector3.zero;
@@ -88,10 +90,11 @@ public class RoomGeneratorScript : MonoBehaviour
             }
 
             dir = Random.Range(0,4);
-
-                while( Physics2D.OverlapBox(position,new Vector2(14,8),0) == true)
+                k=0;
+                while( Physics2D.OverlapBox(position,new Vector2(14,8),0) == true && k<=3)
                 {
                     dir = Random.Range(0,4);
+                    k++;
                     switch(dir)
                     {
                         case 0:

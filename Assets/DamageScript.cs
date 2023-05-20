@@ -9,7 +9,8 @@ public class DamageScript : MonoBehaviour
     public string weakTo;
     public Rigidbody2D rbody;
     public float knockback;
-    void Start()
+    public GameObject DeathParticle;
+    void Awake()
     {
         
     }
@@ -17,7 +18,13 @@ public class DamageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(hp<=0)
+        {
+            GameObject deathEffect = Instantiate(DeathParticle,transform.position + new Vector3(0,0,-2),Quaternion.identity);
+            ParticleSystem particle = deathEffect.GetComponent<ParticleSystem>();
+            Destroy(deathEffect,particle.duration*20);
+            Destroy(transform.parent.gameObject);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -26,7 +33,8 @@ public class DamageScript : MonoBehaviour
         {
             Rigidbody2D cbody = col.gameObject.GetComponent<Rigidbody2D>();
             rbody.velocity = cbody.velocity.normalized * knockback;
-
+            Destroy(cbody.gameObject,.1f);
+            hp = hp - cbody.mass;
         }
     }
 }

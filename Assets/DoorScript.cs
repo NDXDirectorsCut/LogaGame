@@ -4,13 +4,51 @@ using UnityEngine;
 
 public class DoorScript : MonoBehaviour
 {
-    BoxCollider2D collider;
+    
+    //BoxCollider2D collider;
+    public Sprite closedDoorSprite;
+    GameObject closedDoor;
+    GameObject closedTree;
+    public EnemyHandler enemyScript;
     bool isEnabled = true;
     float fadeTime = .25f;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        Debug.Log(transform.root.name);
+        // Debug.Log(transform.root.name);
+        enemyScript = transform.parent.parent.Find("Enemies").GetComponent<EnemyHandler>();
+        closedDoor = new GameObject("closedDoor",typeof(SpriteRenderer),typeof(BoxCollider2D));
+        closedDoor.GetComponent<SpriteRenderer>().sprite = transform.parent.Find("grass").GetComponent<SpriteRenderer>().sprite;
+        closedDoor.GetComponent<SpriteRenderer>().sortingOrder = 20;
+        closedDoor.transform.position = transform.position;
+        closedDoor.transform.up = transform.up;
+        closedDoor.transform.parent = transform.parent;
+        if(transform.parent.Find("copac"))
+        {
+        closedTree = new GameObject("closedTree",typeof(SpriteRenderer));
+        closedTree.GetComponent<SpriteRenderer>().sprite = transform.parent.Find("copac").GetComponent<SpriteRenderer>().sprite;
+        closedTree.GetComponent<SpriteRenderer>().sortingOrder = 20;
+        closedTree.transform.position = closedDoor.transform.position - transform.up;
+        closedTree.transform.up = transform.up;
+        closedTree.transform.parent = transform.parent;
+        }
+    }
+
+    void Update()
+    {
+        if(enemyScript.enemyCount != 0)
+        {
+            isEnabled = false;
+            closedDoor.SetActive(true);
+            closedTree.SetActive(true);
+        }
+        else
+        {
+            isEnabled = true;
+            if(closedTree != null)
+                closedTree.SetActive(false);
+            closedDoor.SetActive(false);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
