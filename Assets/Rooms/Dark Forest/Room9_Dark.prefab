@@ -9726,7 +9726,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CL (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5090254970429983427, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
 --- !u!4 &4999862398071343093 stripped
 Transform:
@@ -9881,7 +9882,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CL (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5090254970429983427, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
 --- !u!4 &6132666915959589659 stripped
 Transform:
@@ -10501,7 +10503,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CR (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 626168255937115630, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
 --- !u!4 &1609622334426183513 stripped
 Transform:
@@ -11214,7 +11217,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CR (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 626168255937115630, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
 --- !u!4 &4406135161624748105 stripped
 Transform:
@@ -11369,7 +11373,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CR (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 626168255937115630, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
 --- !u!4 &5260675491311598510 stripped
 Transform:
@@ -11803,7 +11808,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CL (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5090254970429983427, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
 --- !u!4 &1459406356642647089 stripped
 Transform:
@@ -12516,7 +12522,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CR (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 626168255937115630, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 45811696026d128ef9a2205975ef03dc, type: 3}
 --- !u!4 &8863416675247150266 stripped
 Transform:
@@ -12671,7 +12678,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Apa_CL (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5090254970429983427, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1efa1ffbd604160ddab4b5f941a690ed, type: 3}
 --- !u!4 &4076015004657232388 stripped
 Transform:
