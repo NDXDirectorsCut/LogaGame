@@ -9,6 +9,7 @@ public class BaseMovement : MonoBehaviour
     public Animator headAnim;
     public Animator bodyAnim;
     public int roomNumber = 0;
+    int roomNumber_copy = 0;
 
     [Header("Movement")]
     public float hp; // start HP
@@ -87,13 +88,18 @@ public class BaseMovement : MonoBehaviour
             headAnim.SetBool("RightStick",false);
         }
         
-
-
         if(drawDebug == true)
         {
             Debug.DrawRay(transform.position,leftAxis,Color.blue);
             Debug.DrawRay(transform.position,rightAxis,Color.red);
         }
+
+        if(roomNumber_copy!=roomNumber)
+        {
+            StartCoroutine(ChangeRoom());
+            roomNumber_copy = roomNumber;
+        }
+
     }
 
     IEnumerator Attack()
@@ -146,5 +152,12 @@ public class BaseMovement : MonoBehaviour
                 k+=0.1f;
             }
         }
+    }
+
+    IEnumerator ChangeRoom()
+    {
+        Time.timeScale = 0.005f;
+        yield return new WaitForSecondsRealtime(.6f); //Time stopu
+        Time.timeScale = 1f;
     }
 }

@@ -20,6 +20,7 @@ public class DoorScript : MonoBehaviour
         closedDoor = new GameObject("closedDoor",typeof(SpriteRenderer),typeof(BoxCollider2D));
         closedDoor.GetComponent<SpriteRenderer>().sprite = transform.parent.Find("grass").GetComponent<SpriteRenderer>().sprite;
         closedDoor.GetComponent<SpriteRenderer>().sortingOrder = 20;
+        closedDoor.GetComponent<BoxCollider2D>().size = new Vector2(1,1);
         closedDoor.transform.position = transform.position;
         closedDoor.transform.up = transform.up;
         closedDoor.transform.parent = transform.parent;
@@ -40,7 +41,8 @@ public class DoorScript : MonoBehaviour
         {
             isEnabled = false;
             closedDoor.SetActive(true);
-            closedTree.SetActive(true);
+            if(closedTree != null)
+                closedTree.SetActive(true);
         }
         else
         {
