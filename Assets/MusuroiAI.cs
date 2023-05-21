@@ -12,6 +12,7 @@ public class MusuroiAI : MonoBehaviour
     public float projectileSize;
     //public float 
     public LayerMask layers;
+    public LayerMask layers2;
     public bool canFire;
     int i;
     // Start is called before the first frame update

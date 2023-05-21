@@ -5,7 +5,7 @@ using UnityEngine;
 public class RoomGeneratorScript : MonoBehaviour
 {
     int n;
-
+    public SeedScript seedCarrier;
     public int roomNumber;
     public int seed;
     public int firstDark;
@@ -21,10 +21,14 @@ public class RoomGeneratorScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        seed = Random.Range(0,44000);
+        seed = SeedScript.seed;
+        if(SeedScript.seed == 0)
+        {
+            seed = Random.Range(0,44000);
+        }
         map = new GameObject("Map");
         StartCoroutine(GenerateLayout());
-        for(n=1;n<roomNumber-1;n++)
+        for(n=1;n<roomNumber;n++)
         {
             map.transform.GetChild(n).gameObject.SetActive(false);
         }
@@ -45,7 +49,7 @@ public class RoomGeneratorScript : MonoBehaviour
         GameObject room = startRoom;
         int dir = 0;
         position = Vector3.zero;
-        for(i=1;i<roomNumber;i++)
+        for(i=1;i<=roomNumber;i++)
         {
             Vector3 roomPos = position;
             Debug.Log(i);

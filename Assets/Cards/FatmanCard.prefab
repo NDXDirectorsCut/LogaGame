@@ -136,18 +136,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   itemButton: {fileID: 6495066684979484435}
+  spinBullet: 0
   speed: 0
   sMultiply: 0
-  fireDelay: 4
+  fireDelay: 6
   fdMultiply: 1
   damage: 8
   dMultiply: 1
   projectileSpeed: 0
   psMultiply: 0
   fireSound: {fileID: 8300000, guid: 6ce6717c982c453f8a7e5583ea3e1b1c, type: 3}
-  projectileSize: 0.125
-  tearSprite: {fileID: 21300000, guid: 0ff78913f0f58cb1997f613acc62d2ef, type: 3}
-  hitParticle: {fileID: 3447543236761866257, guid: 38ba7a2bd82bce33893508b8a643e9d2, type: 3}
+  projectileSize: 0
+  tearSprite: {fileID: 0}
+  hitParticle: {fileID: 1388233009210121590, guid: 21c17fbc871a801e1b485d792b7d2bd1, type: 3}
   layers:
     serializedVersion: 2
     m_Bits: 1

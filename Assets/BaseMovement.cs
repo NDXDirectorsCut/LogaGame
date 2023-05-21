@@ -24,6 +24,7 @@ public class BaseMovement : MonoBehaviour
 
     [Header("Attacking")]
     public bool canFire;
+    public bool spinBullet;
     public float fireDelay; //start firing rate
     public float damage;
     public float range; // start Range
@@ -118,7 +119,10 @@ public class BaseMovement : MonoBehaviour
             tear.tag = "Player Projectile";
             tear.GetComponent<SpriteRenderer>().sprite = tearSprite;
             tear.GetComponent<SpriteRenderer>().sortingOrder = 10;
-            tear.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            if(spinBullet == false)
+                tear.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            if(spinBullet == true)
+                tear.GetComponent<Rigidbody2D>().angularVelocity = Random.Range(1440,2880);
             tear.GetComponent<Rigidbody2D>().gravityScale = 0;
             tear.GetComponent<Rigidbody2D>().mass = damage;
             tear.GetComponent<Rigidbody2D>().velocity = rightAxis.normalized * projectileSpeed;
@@ -158,7 +162,7 @@ public class BaseMovement : MonoBehaviour
                     GameObject breakPart = Instantiate(hitParticle,obj.transform.position,Quaternion.identity);
                     ParticleSystem particle = breakPart.GetComponent<ParticleSystem>();
                     Destroy(breakPart,particle.duration*20);
-                    Destroy(obj);
+                    Destroy(obj,0.025f);
                 }
                 yield return new WaitForSeconds(0.1f);
                 k+=0.1f;
@@ -174,6 +178,7 @@ public class BaseMovement : MonoBehaviour
             cardUI.SetActive(false);
             yield return new WaitForSecondsRealtime(.6f); //Time stopu
             Time.timeScale = 1f;
+            hp = 4;
             Cursor.lockState = CursorLockMode.Locked;
             foreach (Transform child in cardUI.transform.Find("CardHolder") )
             {

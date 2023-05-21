@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8850335169764377954}
   - component: {fileID: 8850335169764377955}
   - component: {fileID: 8583552630249152432}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: MusuroiEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +54,9 @@ MonoBehaviour:
   layers:
     serializedVersion: 2
     m_Bits: 1
+  layers2:
+    serializedVersion: 2
+    m_Bits: 0
   canFire: 1
 --- !u!58 &8583552630249152432
 CircleCollider2D:

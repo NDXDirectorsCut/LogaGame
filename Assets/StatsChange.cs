@@ -8,6 +8,8 @@ public class StatsChange : MonoBehaviour
     public BaseMovement playerScript;
     public Button itemButton;
 
+    public bool spinBullet;
+
     public float speed;
     public bool sMultiply;
 
@@ -30,14 +32,16 @@ public class StatsChange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Button btn = gameObject.GetComponent<Button>();
+        Button btn = itemButton.GetComponent<Button>();
 		btn.onClick.AddListener(ClickEvent);
     }
 
     // Update is called once per frame
     void ClickEvent()
     {
-        //playerScript.speed = sMultiply ? playerScript.speed * speed : playerScript.speed + speed;
+        playerScript.spinBullet = spinBullet;
+
+        playerScript.speed = sMultiply ? playerScript.speed * speed : playerScript.speed + speed;
 
         playerScript.fireDelay = fdMultiply ? playerScript.fireDelay * fireDelay : playerScript.fireDelay + fireDelay;
 
@@ -45,11 +49,14 @@ public class StatsChange : MonoBehaviour
 
         playerScript.damage = dMultiply ? playerScript.damage * damage : playerScript.damage + damage;
 
-        playerScript.projectileSize = projectileSize;
-
-        playerScript.tearSprite = tearSprite;
+        if(projectileSize != 0)
+            playerScript.projectileSize = projectileSize;
         
-        playerScript.hitParticle = hitParticle;
+        if(tearSprite != null)
+            playerScript.tearSprite = tearSprite;
+        
+        if(hitParticle != null)
+            playerScript.hitParticle = hitParticle;
 
         playerScript.layers = layers;
 

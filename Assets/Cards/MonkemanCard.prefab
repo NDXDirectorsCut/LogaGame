@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 0}
   itemButton: {fileID: 6495066684979484435}
+  spinBullet: 0
   speed: 1.85
   sMultiply: 0
   fireDelay: 0
@@ -144,8 +145,8 @@ MonoBehaviour:
   dMultiply: 0
   projectileSpeed: 0
   psMultiply: 0
-  fireSound: {fileID: 0}
-  projectileSize: 0.125
+  fireSound: {fileID: 8300000, guid: 6ce6717c982c453f8a7e5583ea3e1b1c, type: 3}
+  projectileSize: 0
   tearSprite: {fileID: 0}
   hitParticle: {fileID: 0}
   layers:
