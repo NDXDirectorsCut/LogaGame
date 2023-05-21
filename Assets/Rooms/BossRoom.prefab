@@ -7913,7 +7913,7 @@ GameObject:
   - component: {fileID: 5462813199367623579}
   - component: {fileID: 3925051010167613392}
   - component: {fileID: 8162357162798456645}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8276,7 +8276,7 @@ GameObject:
   - component: {fileID: 3278458233364912046}
   - component: {fileID: 8686890357280958735}
   - component: {fileID: 6122575657703389056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9745,7 +9745,7 @@ GameObject:
   - component: {fileID: 5320397935848662320}
   - component: {fileID: 1100925072293841499}
   - component: {fileID: 4844576097686804190}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9856,7 +9856,7 @@ GameObject:
   - component: {fileID: 928421270695397727}
   - component: {fileID: 7613901075124974216}
   - component: {fileID: 2634512585618897443}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Collision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14085,6 +14085,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: dvdSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: dvdSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 317b5a31076a475af8d01ed56a44af39, type: 3}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: horseSpeed
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: gallopSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e1e140c8a54156005a5ac5ff0a45947c, type: 3}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: horseBullet
+      value: 
+      objectReference: {fileID: 3213904629580365349, guid: ee0b9efce8a32a8b2a6a008a830840dd, type: 3}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: neighhSound
+      value: 
+      objectReference: {fileID: 8300000, guid: aa7aa6472366cdf64875c7d1deba27da, type: 3}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: phase1Length
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: phase2Length
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: layers.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974723702712276, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: projectileSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974725315249494, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: hp
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974725315249494, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: hp_copy
+      value: 650
+      objectReference: {fileID: 0}
+    - target: {fileID: 3467974725315249494, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: damageSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c74afaf647ec9fc7188369542e895b60, type: 3}
+    - target: {fileID: 3467974725315249494, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
+      propertyPath: normalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ee366b8b19ffd1074ac8d70abc5d65e5, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: faa794a26496735a1b3bfcbf373b3f56, type: 3}
 --- !u!4 &2685516631508958180 stripped

@@ -41,6 +41,17 @@ public class StatsChange : MonoBehaviour
     // Update is called once per frame
     void ClickEvent()
     {
+        if(playerScript.roomNumber == 29)
+        {
+            //playerScript.music.Stop();
+            playerScript.music.clip = playerScript.bossTheme;
+            playerScript.music.Play();
+        }
+        else
+        {
+            playerScript.music.clip = playerScript.normalTheme;
+            playerScript.music.Play();
+        }
         if(monke == true)
         {
             playerScript.monke = true;
@@ -71,6 +82,23 @@ public class StatsChange : MonoBehaviour
         playerScript.layers = layers;
 
         Time.timeScale = 1;
+        StartCoroutine(PlayMusic());
         transform.parent.parent.gameObject.SetActive(false);
+    }
+
+    IEnumerator PlayMusic()
+    {
+        if(playerScript.roomNumber == 29)
+        {
+            //playerScript.music.Stop();
+            playerScript.music.clip = playerScript.bossTheme;
+            playerScript.music.Play();
+        }
+        else
+        {
+            playerScript.music.clip = playerScript.normalTheme;
+            playerScript.music.Play();
+        }
+        yield return null;
     }
 }
