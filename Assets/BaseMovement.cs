@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseMovement : MonoBehaviour
 {
     Rigidbody2D rbody;
-    AudioSource sound;
+    public AudioSource music;
+    public AudioClip bossTheme;
+    public AudioClip pauseTheme;
+    public AudioClip normalTheme;
     public Animator headAnim;
     public Animator bodyAnim;
     public int roomNumber = 0;
     int roomNumber_copy = 0;
     public GameObject cardUI;
     public RoomGeneratorScript roomGen;
+
+    public GameObject deathPanel;
+    public GameObject winPanel;
+    //public GameObject bossRoom;
+    public BossDamageScript bossHealthRef;
+    public float bossHealth;
 
     public List<GameObject> items = new List<GameObject>();
 
@@ -51,10 +61,11 @@ public class BaseMovement : MonoBehaviour
     Vector3 rightAxis { get; set; }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
-        sound = gameObject.GetComponent<AudioSource>();
+        Debug.Log(transform.root);
+        //sound = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -64,6 +75,17 @@ public class BaseMovement : MonoBehaviour
         float lVer = smoothInput ? Input.GetAxis("LeftVertical") : Input.GetAxisRaw("LeftVertical");
         float rHor = Input.GetAxisRaw("RightHorizontal");
         float rVer = Input.GetAxisRaw("RightVertical");
+        bossHealthRef = roomGen.map.transform.Find("BossRoom(Clone)").Find("Enemies").Find("BOSS").Find("cal").GetComponent<BossDamageScript>();
+        bossHealth = bossHealthRef.hp;
+        //Debug.Log();
+        //bossHealth = bossRoom.Find("Enemies").Find("BOSS").Find("cal");
+        if(bossHealth<=0)
+        {
+            invincible = true;
+            winPanel.SetActive(true);
+            winPanel.GetComponent<Image>().color = Color.Lerp(winPanel.GetComponent<Image>().color,new Color(1,1,1,1),0.01f);
+        }
+
 
         headAnim.SetBool("Monke",monke);
         bodyAnim.SetBool("Fat",fat);
@@ -177,10 +199,11 @@ public class BaseMovement : MonoBehaviour
 
     IEnumerator ChangeRoom()
     {
-        if(roomNumber != roomGen.firstDark && roomNumber != roomGen.firstSwamp)
+        if(roomNumber != roomGen.firstDark && roomNumber != roomGen.firstSwamp && roomNumber != 29)
         {
             Time.timeScale = 0.005f;
             cardUI.SetActive(false);
+            //music.clip = normalTheme;
             yield return new WaitForSecondsRealtime(.6f); //Time stopu
             Time.timeScale = 1f;
             //hp = 4;
@@ -195,7 +218,8 @@ public class BaseMovement : MonoBehaviour
             Random.InitState(roomGen.seed);
             Time.timeScale = 0f;
             Cursor.lockState = CursorLockMode.None;
-
+            music.clip = pauseTheme;
+            music.Play();
             int card1ID = Random.Range(0,items.Count);
 
             GameObject card1 = Instantiate(items[card1ID],Vector3.zero,Quaternion.identity );

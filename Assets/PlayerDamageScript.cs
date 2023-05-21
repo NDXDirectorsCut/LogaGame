@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerDamageScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerDamageScript : MonoBehaviour
     public float invLength = .1f;
     Rigidbody2D rbody;
     public GameObject spriteRoot;
+    public GameObject deathPanel;
     //public float knockback;
     // Start is called before the first frame update
     void Awake()
@@ -28,6 +30,8 @@ public class PlayerDamageScript : MonoBehaviour
             //playerScript.gameObject.SetActive(false);
             playerScript.canFire = false;
             rbody.simulated = false;
+            deathPanel.SetActive(true);
+            deathPanel.GetComponent<Image>().color = Color.Lerp(deathPanel.GetComponent<Image>().color,new Color(0,0,0,1),.25f);
         }
     }
     

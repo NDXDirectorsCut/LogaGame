@@ -40,7 +40,15 @@ public class BossDamageScript : MonoBehaviour
             hp_copy = hp;
             StartCoroutine(DamageEff());
         }
-
+        
+        if(hp <= 0)
+        {
+            aiScript.enabled = false;
+            wiggleScript.sinStrength = new Vector3(.2f,0,0);
+            wiggleScript.cosStrength = Vector3.zero;
+            wiggleScript.speed = new Vector2(50,0);
+            spriteRend.sprite = damageSprite;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6509345387223464090}
   - component: {fileID: 6509345387223464091}
   - component: {fileID: 6509345387223464100}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   canFire: 1
   fireDelay: 1.1
   damage: 1
-  offset: {x: 0, y: 0.5, z: 0}
+  offset: {x: 0, y: 0, z: 0}
   range: 5
   projectileSpeed: 6
   fireSound: {fileID: 8300000, guid: 6ce6717c982c453f8a7e5583ea3e1b1c, type: 3}

@@ -13,7 +13,7 @@ public class RoomGeneratorScript : MonoBehaviour
     public Vector3 position;
     public GameObject startRoom;
     public GameObject bossRoom;
-    GameObject map;
+    public GameObject map;
     public GameObject[] forestRooms;
     public GameObject[] darkForestRooms;
     public GameObject[] swampRooms;
@@ -118,13 +118,15 @@ public class RoomGeneratorScript : MonoBehaviour
 
                 for(j=0;j<4;j++)
                 {
-                    room.transform.Find("Wall"+j).gameObject.SetActive(true);
-                    if(j==dir)
+                    if(room.transform.Find("Wall"+j)!= null)
                     {
-                        room.transform.Find("Wall"+j).gameObject.SetActive(false);
-                        room.transform.Find("Door"+j).gameObject.SetActive(true);
+                        room.transform.Find("Wall"+j).gameObject.SetActive(true);
+                        if(j==dir)
+                        {
+                            room.transform.Find("Wall"+j).gameObject.SetActive(false);
+                            room.transform.Find("Door"+j).gameObject.SetActive(true);
+                        }
                     }
-
                 }
                 prevDir = dir;
         }
