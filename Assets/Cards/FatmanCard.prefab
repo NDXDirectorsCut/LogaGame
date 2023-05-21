@@ -153,4 +153,4 @@ MonoBehaviour:
   hitParticle: {fileID: 1388233009210121590, guid: 21c17fbc871a801e1b485d792b7d2bd1, type: 3}
   layers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 513

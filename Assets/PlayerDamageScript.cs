@@ -14,6 +14,8 @@ public class PlayerDamageScript : MonoBehaviour
     Rigidbody2D rbody;
     public GameObject spriteRoot;
     public GameObject deathPanel;
+    public AudioClip dmgSound;
+    public AudioClip deathSound;
     //public float knockback;
     // Start is called before the first frame update
     void Awake()
@@ -52,6 +54,18 @@ public class PlayerDamageScript : MonoBehaviour
     IEnumerator TakeDamage(float damage)
     {
         playerScript.hp = playerScript.hp - damage;
+        GameObject soundSource = new GameObject("dmgSound",typeof(AudioSource)); //.GetComponent<AudioSource>()
+        if(playerScript.hp>0)
+            soundSource.GetComponent<AudioSource>().clip = dmgSound;
+        else if(playerScript.hp<=0)
+        {
+            soundSource.GetComponent<AudioSource>().clip = deathSound;
+            playerScript.music.clip = playerScript.pauseTheme;
+            Cursor.lockState = CursorLockMode.None;
+            playerScript.music.Play();
+        }   
+        soundSource.GetComponent<AudioSource>().Play();
+        Destroy(soundSource,5);
         if(playerScript.hp > 0)
         {
             playerScript.invincible = true;

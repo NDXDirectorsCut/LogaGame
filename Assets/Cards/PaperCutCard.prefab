@@ -137,6 +137,8 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   itemButton: {fileID: 6495066684979484435}
   spinBullet: 0
+  monke: 0
+  fat: 0
   speed: 0
   sMultiply: 0
   fireDelay: 0.75
@@ -151,4 +153,4 @@ MonoBehaviour:
   hitParticle: {fileID: 3447543236761866257, guid: f310480c00e8668b79eed3d09a2f9c16, type: 3}
   layers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 513

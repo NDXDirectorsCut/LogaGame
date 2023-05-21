@@ -3049,11 +3049,6 @@ Transform:
   m_Father: {fileID: 200315605}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
---- !u!1 &821192307 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 821192307, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-  m_PrefabInstance: {fileID: 6156024254205728733}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &834291834
 GameObject:
   m_ObjectHideFlags: 0
@@ -6753,74 +6748,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 174808522, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 174808522, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 174808522, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 174808522, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421642757, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421642757, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421642757, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 421642757, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 645406559, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 645406559, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 645406559, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 645406559, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 821192309, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
       propertyPath: seedCarrier
       value: 
       objectReference: {fileID: 1182604596}
-    - target: {fileID: 1009406230, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009406230, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009406230, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1009406230, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2044652571, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
       propertyPath: seedCarrier
       value: 
@@ -6829,14 +6760,6 @@ PrefabInstance:
       propertyPath: roomGen
       value: 
       objectReference: {fileID: 1182604596}
-    - target: {fileID: 6156024252814021256, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: winPanel
-      value: 
-      objectReference: {fileID: 821192307}
-    - target: {fileID: 6156024252814021256, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
-      propertyPath: invincible
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6156024253819341118, guid: a72af9ac82bee0463a27d922391244ff, type: 3}
       propertyPath: m_RootOrder
       value: 1

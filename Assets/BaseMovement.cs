@@ -83,6 +83,7 @@ public class BaseMovement : MonoBehaviour
         {
             invincible = true;
             winPanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
             winPanel.GetComponent<Image>().color = Color.Lerp(winPanel.GetComponent<Image>().color,new Color(1,1,1,1),0.01f);
         }
 

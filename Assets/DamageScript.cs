@@ -9,6 +9,7 @@ public class DamageScript : MonoBehaviour
     public string weakTo;
     public Rigidbody2D rbody;
     public float knockback;
+    public AudioClip dmgSound;
     public GameObject DeathParticle;
     void Awake()
     {
@@ -35,6 +36,10 @@ public class DamageScript : MonoBehaviour
             rbody.velocity = cbody.velocity.normalized * knockback;
             Destroy(cbody.gameObject,.25f);
             hp = hp - cbody.mass;
+            GameObject soundSource = new GameObject("dmgSound",typeof(AudioSource));
+            soundSource.GetComponent<AudioSource>().clip = dmgSound;
+            soundSource.GetComponent<AudioSource>().Play();
+            Destroy(soundSource,5);
         }
     }
 }

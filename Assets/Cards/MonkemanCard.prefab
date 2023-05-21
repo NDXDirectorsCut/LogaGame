@@ -153,4 +153,4 @@ MonoBehaviour:
   hitParticle: {fileID: 0}
   layers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 513

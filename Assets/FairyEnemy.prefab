@@ -292,6 +292,7 @@ MonoBehaviour:
   weakTo: Player Projectile
   rbody: {fileID: 342283885448503910}
   knockback: 8
+  dmgSound: {fileID: 8300000, guid: b4ebb1bdca5209b69a1c3904867a0a64, type: 3}
   DeathParticle: {fileID: 7723508849633284206, guid: bca7f5954fa9d50959f9cab507b20bca, type: 3}
 --- !u!1 &342283884639784452
 GameObject:
