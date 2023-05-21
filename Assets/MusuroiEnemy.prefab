@@ -50,7 +50,7 @@ MonoBehaviour:
   fireDelay: 1.5
   range: 6
   projectileSpeed: 4
-  projectileSize: 0.08
+  projectileSize: 0.06
   layers:
     serializedVersion: 2
     m_Bits: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8d9e5748a3aac67b0c27b057e20345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 16
+  hp: 11
   weakTo: Player Projectile
   rbody: {fileID: 8850335170841573898}
   knockback: 0
@@ -215,6 +215,6 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.05}
   serializedVersion: 2
   m_Radius: 0.3

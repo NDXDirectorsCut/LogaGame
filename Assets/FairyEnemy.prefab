@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8d9e5748a3aac67b0c27b057e20345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 16.25
+  hp: 11.25
   weakTo: Player Projectile
   rbody: {fileID: 342283885448503910}
   knockback: 8
