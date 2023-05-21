@@ -8,10 +8,15 @@ public class ElfMicAI : MonoBehaviour
     public Rigidbody2D rbody;
     public float acc;
     public float speed;
+
+    public DamageScript dmgScript;
+    public SpriteRenderer spriteRend;
+    float hp_copy;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        hp_copy = dmgScript.hp;
     }
 
     // Update is called once per frame
@@ -30,6 +35,13 @@ public class ElfMicAI : MonoBehaviour
         {
             rbody.velocity = Vector2.Lerp(rbody.velocity,Vector2.zero,0.25f);
         }
+
+        if(hp_copy!=dmgScript.hp)
+        {
+            hp_copy = dmgScript.hp;
+            StartCoroutine(Flash());
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -39,4 +51,12 @@ public class ElfMicAI : MonoBehaviour
             target = col.transform;
         }
     }
+
+    IEnumerator Flash()
+    {
+        spriteRend.color = new Color(1,0.53f,0.53f);
+        yield return new WaitForSeconds(0.2f);
+        spriteRend.color = Color.white;
+    }
+
 }

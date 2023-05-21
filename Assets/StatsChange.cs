@@ -9,6 +9,8 @@ public class StatsChange : MonoBehaviour
     public Button itemButton;
 
     public bool spinBullet;
+    public bool monke;
+    public bool fat;
 
     public float speed;
     public bool sMultiply;
@@ -39,6 +41,14 @@ public class StatsChange : MonoBehaviour
     // Update is called once per frame
     void ClickEvent()
     {
+        if(monke == true)
+        {
+            playerScript.monke = true;
+        }
+        if(fat == true)
+        {
+            playerScript.fat = true;
+        }
         playerScript.spinBullet = spinBullet;
 
         playerScript.speed = sMultiply ? playerScript.speed * speed : playerScript.speed + speed;

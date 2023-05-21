@@ -137,6 +137,8 @@ MonoBehaviour:
   playerScript: {fileID: 0}
   itemButton: {fileID: 6495066684979484435}
   spinBullet: 0
+  monke: 0
+  fat: 1
   speed: 0
   sMultiply: 0
   fireDelay: 6

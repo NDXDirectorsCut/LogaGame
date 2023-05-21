@@ -20,6 +20,8 @@ public class BaseMovement : MonoBehaviour
     public float acc;
     public float speed;
     public bool invincible;
+    public bool monke;
+    public bool fat;
     [Space(10)]
 
     [Header("Attacking")]
@@ -62,6 +64,9 @@ public class BaseMovement : MonoBehaviour
         float lVer = smoothInput ? Input.GetAxis("LeftVertical") : Input.GetAxisRaw("LeftVertical");
         float rHor = Input.GetAxisRaw("RightHorizontal");
         float rVer = Input.GetAxisRaw("RightVertical");
+
+        headAnim.SetBool("Monke",monke);
+        bodyAnim.SetBool("Fat",fat);
 
         leftAxis = Vector3.ClampMagnitude(new Vector3(lHor,lVer,0),1);
         rightAxis = new Vector3(rHor,rVer,0);
@@ -178,7 +183,7 @@ public class BaseMovement : MonoBehaviour
             cardUI.SetActive(false);
             yield return new WaitForSecondsRealtime(.6f); //Time stopu
             Time.timeScale = 1f;
-            hp = 4;
+            //hp = 4;
             Cursor.lockState = CursorLockMode.Locked;
             foreach (Transform child in cardUI.transform.Find("CardHolder") )
             {
@@ -210,7 +215,7 @@ public class BaseMovement : MonoBehaviour
             items.Remove(items[card2ID]);
 
             cardUI.SetActive(true);
-
+            hp = 4;
         }
     }
 }

@@ -157,7 +157,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 13
   m_Sprite: {fileID: 21300000, guid: 844e5b5dc171fb0fd9a8c46f6d59ef12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -241,7 +241,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 502a31b5c895c13509d2291c15047141, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8d9e5748a3aac67b0c27b057e20345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
+  hp: 21.5
   weakTo: Player Projectile
   rbody: {fileID: 5656824343117103728}
   knockback: 5
@@ -441,3 +441,5 @@ MonoBehaviour:
   rbody: {fileID: 5656824343117103728}
   acc: 3
   speed: 2.5
+  dmgScript: {fileID: 5656824342782438199}
+  spriteRend: {fileID: 5656824342314917662}

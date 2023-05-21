@@ -19,6 +19,10 @@ public class ElfAI : MonoBehaviour
     public bool canSearch = true;
     Vector2 searchDir;
 
+    public DamageScript dmgScript;
+    public SpriteRenderer spriteRend;
+    float hp_copy;
+
     [Header("Attacking")]
     public bool canFire;
     public float fireDelay; //start firing rate
@@ -38,6 +42,7 @@ public class ElfAI : MonoBehaviour
     void Start()
     {
         rbody = gameObject.GetComponent<Rigidbody2D>();
+        hp_copy = dmgScript.hp;
 
     }
 
@@ -76,6 +81,13 @@ public class ElfAI : MonoBehaviour
         {
             transform.Find("elfSprite").GetComponent<SpriteRenderer>().flipX = false;
         }
+
+        if(hp_copy!=dmgScript.hp)
+        {
+            hp_copy = dmgScript.hp;
+            StartCoroutine(Flash());
+        }
+
     }
     void OnTriggerEnter2D( Collider2D col)
     {
@@ -83,6 +95,13 @@ public class ElfAI : MonoBehaviour
         {
             target = col.transform;
         }
+    }
+
+    IEnumerator Flash()
+    {
+        spriteRend.color = new Color(1,0.53f,0.53f);
+        yield return new WaitForSeconds(0.2f);
+        spriteRend.color = Color.white;
     }
 
     IEnumerator Search()

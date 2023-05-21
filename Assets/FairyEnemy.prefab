@@ -288,7 +288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8d9e5748a3aac67b0c27b057e20345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
+  hp: 16.25
   weakTo: Player Projectile
   rbody: {fileID: 342283885448503910}
   knockback: 8
@@ -430,6 +430,8 @@ MonoBehaviour:
   rbody: {fileID: 342283885448503910}
   acc: 0.7
   speed: 3
+  dmgScript: {fileID: 342283884313459158}
+  spriteRend: {fileID: 342283884313459147}
 --- !u!50 &342283885448503910
 Rigidbody2D:
   serializedVersion: 4

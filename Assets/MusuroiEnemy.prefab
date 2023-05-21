@@ -58,6 +58,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   canFire: 1
+  dmgScript: {fileID: 8850335170841573897}
+  spriteRend: {fileID: 8850335170841573899}
 --- !u!58 &8583552630249152432
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -173,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8d9e5748a3aac67b0c27b057e20345, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 20
+  hp: 16
   weakTo: Player Projectile
   rbody: {fileID: 8850335170841573898}
   knockback: 0
