@@ -33,7 +33,7 @@ public class DamageScript : MonoBehaviour
         {
             Rigidbody2D cbody = col.gameObject.GetComponent<Rigidbody2D>();
             rbody.velocity = cbody.velocity.normalized * knockback;
-            Destroy(cbody.gameObject,.1f);
+            Destroy(cbody.gameObject,.25f);
             hp = hp - cbody.mass;
         }
     }

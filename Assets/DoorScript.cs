@@ -78,11 +78,13 @@ public class DoorScript : MonoBehaviour
         movScript.roomNumber += 1;
         transform.root.GetChild(movScript.roomNumber).gameObject.SetActive(true);
         camScript.target = transform.root.GetChild(movScript.roomNumber);
+        //Time.timeScale = 0;
         //rbody.simulated = false;
         trans.position += -transform.up * 3;
-        yield return new WaitForSeconds(.25f);
-        Debug.Log("Moved");
-        trans.position += -transform.up * 3;
-        rbody.simulated = true;
+        yield return new WaitForSecondsRealtime(.25f);
+
+        //Debug.Log("Moved");
+        //trans.position += -transform.up * 3;
+        //rbody.simulated = true;
     }
 }

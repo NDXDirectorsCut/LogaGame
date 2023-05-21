@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5656824341737926953}
   - component: {fileID: 5656824341737926954}
   - component: {fileID: 5656824341737926955}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: hurtbox
   m_TagString: Enemy Projectile
   m_Icon: {fileID: 0}
@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: 5656824342782438192}
   - component: {fileID: 5656824342782438198}
   - component: {fileID: 5656824342782438199}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,4 +440,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rbody: {fileID: 5656824343117103728}
   acc: 3
-  speed: 3.5
+  speed: 2.5

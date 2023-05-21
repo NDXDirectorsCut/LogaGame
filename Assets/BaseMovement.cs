@@ -10,6 +10,10 @@ public class BaseMovement : MonoBehaviour
     public Animator bodyAnim;
     public int roomNumber = 0;
     int roomNumber_copy = 0;
+    public GameObject cardUI;
+    public RoomGeneratorScript roomGen;
+
+    public List<GameObject> items = new List<GameObject>();
 
     [Header("Movement")]
     public float hp; // start HP
@@ -29,6 +33,7 @@ public class BaseMovement : MonoBehaviour
     public float randomization;
     public LayerMask layers;
     public Sprite tearSprite;
+    public GameObject hitParticle;
     [Space(10)]
 
     [Header("Settings")]
@@ -130,6 +135,10 @@ public class BaseMovement : MonoBehaviour
 
             yield return new WaitForSeconds(fireDelay);
             canFire = true;
+            yield return new WaitForSeconds(range-fireDelay-.1f);
+            GameObject breakPart = Instantiate(hitParticle,tear.transform.position,Quaternion.identity);
+            ParticleSystem particle = breakPart.GetComponent<ParticleSystem>();
+            Destroy(breakPart,particle.duration*20);
         }
     }
 
@@ -146,6 +155,9 @@ public class BaseMovement : MonoBehaviour
                 if(Physics2D.OverlapCircle(obj.transform.position,projectileSize,layers) != null)
                 {
                     objBody.velocity = Vector2.zero;
+                    GameObject breakPart = Instantiate(hitParticle,obj.transform.position,Quaternion.identity);
+                    ParticleSystem particle = breakPart.GetComponent<ParticleSystem>();
+                    Destroy(breakPart,particle.duration*20);
                     Destroy(obj);
                 }
                 yield return new WaitForSeconds(0.1f);
@@ -156,8 +168,44 @@ public class BaseMovement : MonoBehaviour
 
     IEnumerator ChangeRoom()
     {
-        Time.timeScale = 0.005f;
-        yield return new WaitForSecondsRealtime(.6f); //Time stopu
-        Time.timeScale = 1f;
+        if(roomNumber != roomGen.firstDark && roomNumber != roomGen.firstSwamp)
+        {
+            Time.timeScale = 0.005f;
+            cardUI.SetActive(false);
+            yield return new WaitForSecondsRealtime(.6f); //Time stopu
+            Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
+            foreach (Transform child in cardUI.transform.Find("CardHolder") )
+            {
+                Destroy(child.gameObject);
+            }
+        }
+        else
+        {
+            Random.InitState(roomGen.seed);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.None;
+
+            int card1ID = Random.Range(0,items.Count);
+
+            GameObject card1 = Instantiate(items[card1ID],Vector3.zero,Quaternion.identity );
+            card1.transform.parent = cardUI.transform.Find("CardHolder");
+            card1.transform.localScale = Vector3.one;
+            StatsChange card1Script = card1.GetComponent<StatsChange>();
+            card1Script.playerScript = gameObject.GetComponent<BaseMovement>();
+            items.Remove(items[card1ID]);
+
+            int card2ID = Random.Range(0,items.Count);
+
+            GameObject card2 = Instantiate(items[card2ID],Vector3.zero,Quaternion.identity );
+            card2.transform.parent = cardUI.transform.Find("CardHolder");
+            card2.transform.localScale = Vector3.one;
+            StatsChange card2Script = card2.GetComponent<StatsChange>();
+            card2Script.playerScript = gameObject.GetComponent<BaseMovement>();
+            items.Remove(items[card2ID]);
+
+            cardUI.SetActive(true);
+
+        }
     }
 }

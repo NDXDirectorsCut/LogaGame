@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6509345387223464090}
   - component: {fileID: 6509345387223464091}
   - component: {fileID: 6509345387223464100}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,14 +125,14 @@ MonoBehaviour:
   canHit: 0
   canSearch: 1
   canFire: 1
-  fireDelay: 0.8
+  fireDelay: 1.1
   damage: 1
   offset: {x: 0, y: 0.5, z: 0}
   range: 5
-  projectileSpeed: 7
+  projectileSpeed: 6
   fireSound: {fileID: 8300000, guid: 6ce6717c982c453f8a7e5583ea3e1b1c, type: 3}
   projectileSize: 0.125
-  randomization: 0.2
+  randomization: 0.3
   layers:
     serializedVersion: 2
     m_Bits: 9
@@ -247,7 +247,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 14
+  m_SortingOrder: 17
   m_Sprite: {fileID: 21300000, guid: a02b140087ae055b1968315757e3bfbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

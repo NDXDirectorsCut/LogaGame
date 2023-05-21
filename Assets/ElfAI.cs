@@ -48,7 +48,7 @@ public class ElfAI : MonoBehaviour
         {
             moveDir = target.position-transform.position;
         }
-        RaycastHit2D hit = Physics2D.Raycast(transform.position,moveDir,30,layers);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position+new Vector3(moveDir.normalized.x,moveDir.normalized.y,0),moveDir,30,layers);
         if(hit.transform != null && hit.transform.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             rbody.velocity += moveDir.normalized * acc;

@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 342283884313459156}
   - component: {fileID: 342283884313459157}
   - component: {fileID: 342283884313459158}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: zanaSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

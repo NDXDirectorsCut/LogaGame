@@ -24,7 +24,7 @@ public class RoomGeneratorScript : MonoBehaviour
         seed = Random.Range(0,44000);
         map = new GameObject("Map");
         StartCoroutine(GenerateLayout());
-        for(n=1;n<roomNumber;n++)
+        for(n=1;n<roomNumber-1;n++)
         {
             map.transform.GetChild(n).gameObject.SetActive(false);
         }
@@ -45,10 +45,10 @@ public class RoomGeneratorScript : MonoBehaviour
         GameObject room = startRoom;
         int dir = 0;
         position = Vector3.zero;
-        for(i=1;i<=roomNumber;i++)
+        for(i=1;i<roomNumber;i++)
         {
             Vector3 roomPos = position;
-            
+            Debug.Log(i);
             if(i==1)
             {
                 room = Instantiate(startRoom,position,Quaternion.identity);
