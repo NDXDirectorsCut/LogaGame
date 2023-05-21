@@ -26,6 +26,6 @@ public class SeedScript : MonoBehaviour
                 //Debug.Log(seed);
             }
         }
-        Debug.Log("Current Seed: " + seed);
+        //Debug.Log("Current Seed: " + seed);
     }
 }
