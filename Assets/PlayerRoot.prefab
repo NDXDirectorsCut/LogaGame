@@ -118,6 +118,9 @@ MonoBehaviour:
   headAnim: {fileID: 6156024253537908368}
   bodyAnim: {fileID: 6156024254332847376}
   roomNumber: 0
+  cardUI: {fileID: 0}
+  roomGen: {fileID: 0}
+  items: []
   hp: 20
   acc: 3
   speed: 4.5
@@ -127,12 +130,14 @@ MonoBehaviour:
   damage: 5
   range: 1.25
   projectileSpeed: 7.5
+  fireSound: {fileID: 0}
   projectileSize: 0.125
   randomization: 0.1
   layers:
     serializedVersion: 2
     m_Bits: 1
   tearSprite: {fileID: 21300000, guid: 0ff78913f0f58cb1997f613acc62d2ef, type: 3}
+  hitParticle: {fileID: 0}
   smoothInput: 0
   drawDebug: 1
 --- !u!50 &6156024252814021262
